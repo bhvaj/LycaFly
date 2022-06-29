@@ -1,0 +1,610 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace gta_hotel_beds
+{
+    class Program
+    {
+        public static void German()
+        {
+
+            Console.WriteLine("Your destination is Germany! ");
+            Console.ReadLine();
+            int a, b, c, total, sum;
+            Console.WriteLine("Enter the number of Adults : ");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Children : ");
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Infants : ");
+            c = int.Parse(Console.ReadLine());
+            total = a * 100 + b * 10 + c;
+            sum=a+b+c;
+            if(sum>8)
+            {
+              Console.WriteLine("No more than 8 people can be accomodated");
+              Console.ReadLine();
+            } 
+            Dictionary<int, string> room = new Dictionary<int, string>();
+            room.Add(100, "1 SINGLE BED");
+            room.Add(101, "1 TWIN BED i.e. two single beds");
+            room.Add(102, "1 TWIN BED i.e. two single beds");
+            room.Add(110, "1 TWIN BED i.e. two single beds");
+            room.Add(111, "1 TWIN BED i.e. two single beds + 1 CRIB");
+            room.Add(112, "1 TWIN BED i.e. two single beds + 2 CRIB");
+            room.Add(120, "1 DOUBLE BED");
+            room.Add(121, "1 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(122, "2 DOUBLE BED + 2 CRIB");
+            room.Add(200, "1 DOUBLE BED");
+            room.Add(201, "1 DOUBLE BED + 1 CRIB");
+            room.Add(210, "1 TRIPLE BED i.e. double bed + single bed");
+            room.Add(220, "1 DOUBLE BED + 2 SINGLE BED");
+            room.Add(202, "1 DOUBLE BED + 2 CRIB");
+            room.Add(211, "1 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(212, "1 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(221, "2 DOUBLE BED + 1 CRIB");
+            room.Add(222, "2 DOUBLE BED + 2 CRIB");
+            room.Add(230, "2 DOUBLE BED + SINGLE BED");
+            room.Add(203, "1 DOUBLE + 1 CRIB + 1 DOUBLE + 2 CRIB");
+            room.Add(231, "2 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(213, "1 DOUBLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(232, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(223, "2 DOUBLE BED + 3 CRIB");
+            room.Add(300, "1 TRIPLE BED");
+            room.Add(301, "1 TRIPLE BED ");
+            room.Add(320, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(310, "2 DOUBLE BED");
+            room.Add(302, "1 TRIPLE BED");
+            room.Add(303, "1 DOUBLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(330, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(321, "1 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(312, "1 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(322, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(331, "2 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(313, "2 DOUBLE BED + 3 CRIB");
+            room.Add(332, "2 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(333, "2 DOUBLE BED + 2 SINGLE BED + 3 CRIB");
+            room.Add(341, "3 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(314, "2 DOUBLE BED + 4 CRIB");
+            room.Add(400, "1 QUAD BED");
+            room.Add(410, "2 DOUBLE BED + 1 SINGLE BED");
+            room.Add(401, "1 QUAD BED");
+            room.Add(402, "1 QUAD BED");
+            room.Add(420, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(403, "1 TRIPLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(430, "3 DOUBLE BED + 1 SINGLE BED");
+            room.Add(440, "2 DOUBLE BED + 4 SINGLE BED");
+            room.Add(404, "2 DOUBLE BED + 4 CRIB");
+            room.Add(411, "2 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(412, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(421, "2 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(422, "2 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(431, "2 DOUBLE BED + 3 SINGLE BED + 1 CRIB");
+            room.Add(413, "2 DOUBLE BED + 3 CRIB");
+            room.Add(500, "1 TRIPLE BED + 1 DOUBLE BED");
+            room.Add(501, "1 TRIPLE BED + 1 DOUBLE BED + 1 CRIB");
+            room.Add(510, "1 TRIPLE BED + 1 DOUBLE BED + 1 SINGLE BED");
+            room.Add(520, "1 TRIPLE BED + 2 DOUBLE BED");
+            room.Add(502, "1 TRIPLE BED + 1 DOUBLE BED + 2 CRIB");
+            room.Add(503, "1 TRIPLE BED + 1 DOUBLE BED + 3 CRIB");
+            room.Add(530, "4 DOUBLE BED");
+            room.Add(521, "1 TRIPLE BED + 2 DOUBLE BED + 1 CRIB");
+            room.Add(512, "1 TRIPLE BED + 1 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(600, "2 TRIPLE BED");
+            room.Add(601, "2 TRIPLE BED + 1 CRIB");
+            room.Add(610, "2 TRILPE BED + 1 SINGLE BED");
+            room.Add(620, "2 TRIPLE BED + 1 DOUBLE BED");
+            room.Add(602, "2 TRIPLE BED + 2 CRIB");
+            room.Add(621, "2 TRIPLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(612, "2 TRIPLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(700, "1 QUAD BED + 1 TRIPLE BED");
+            room.Add(710, "1 QUAD BED + 2 DOUBLE BED");
+            room.Add(701, "1 QUAD BED + 1 TRILPE BED + 1 CRIB");
+            room.Add(800, "2 QUAD BED");
+            //Console.WriteLine("NO MORE THAN 8  PEOPLE ARE ALLOWED TO STAY IN A ROOM. SORRY.");
+
+            foreach (KeyValuePair<int, string> j in room)
+            {
+                if (j.Key == total)
+                {
+                    Console.WriteLine("The allocated bed for you is : " + j.Value);
+                    Console.ReadLine();
+                }
+            }
+        }
+        public static void Scandinavia()
+        {
+            Console.WriteLine("Your Destination is Scandinavia!");
+            Console.ReadLine();
+            int a, b, c, total, sum;
+            Console.WriteLine("Enter the number of Adults : ");               
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Children : ");
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Infants : ");
+            c = int.Parse(Console.ReadLine());
+            total = a * 100 + b * 10 + c;
+            sum=a+b+c;
+            if(sum>8)
+            {
+              Console.WriteLine("No more than 8 people can be accomodated");
+              Console.ReadLine();
+            }
+            Dictionary<int, string> room = new Dictionary<int, string>();
+            room.Add(100, "1 SINGLE BED");
+            room.Add(101, "1 TWIN BED i.e. 1 single bed + 1 sofa bed");
+            room.Add(102, "1 TWIN BED i.e. 1 single bed + 1 sofa bed");
+            room.Add(110, "1 TWIN BED i.e. 1 single bed + 1 sofa bed");
+            room.Add(111, "1 TWIN BED i.e. 1 single bed + 1 sofa bed + 1 CRIB");
+            room.Add(112, "1 TWIN BED i.e. 1 single bed + 1 sofa bed + 2 CRIB");
+            room.Add(120, "1 DOUBLE BED");
+            room.Add(121, "1 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(122, "2 DOUBLE BED + 2 CRIB");
+            room.Add(200, "1 DOUBLE BED");
+            room.Add(201, "1 DOUBLE BED + 1 CRIB");
+            room.Add(210, "1 TRIPLE BED i.e. double bed + single bed");
+            room.Add(220, "1 DOUBLE BED + 2 SINGLE BED");
+            room.Add(202, "1 DOUBLE BED + 2 CRIB");
+            room.Add(211, "1 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(212, "1 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(221, "2 DOUBLE BED + 1 CRIB");
+            room.Add(222, "2 DOUBLE BED + 2 CRIB");
+            room.Add(230, "2 DOUBLE BED + SINGLE BED");
+            room.Add(203, "1 DOUBLE + 1 CRIB + 1 DOUBLE + 2 CRIB");
+            room.Add(231, "2 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(213, "1 DOUBLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(232, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(223, "2 DOUBLE BED + 3 CRIB");
+            room.Add(300, "1 TRIPLE BED i.e. 1 double bed + 1 sofa bed");
+            room.Add(301, "1 TRIPLE BED i.e. 1 double bed + 1 sofa bed");
+            room.Add(320, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(310, "2 DOUBLE BED");
+            room.Add(302, "1 TRIPLE BED i.e. 1 double bed + 1 sofa bed");
+            room.Add(303, "1 DOUBLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(330, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(321, "1 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(312, "1 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(322, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(331, "2 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(313, "2 DOUBLE BED + 3 CRIB");
+            room.Add(332, "2 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(333, "2 DOUBLE BED + 2 SINGLE BED + 3 CRIB");
+            room.Add(341, "3 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(314, "2 DOUBLE BED + 4 CRIB");
+            room.Add(400, "1 QUAD BED");
+            room.Add(410, "2 DOUBLE BED + 1 SINGLE BED");
+            room.Add(401, "1 QUAD BED");
+            room.Add(402, "1 QUAD BED");
+            room.Add(420, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(403, "1 TRIPLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(430, "3 DOUBLE BED + 1 SINGLE BED");
+            room.Add(440, "2 DOUBLE BED + 4 SINGLE BED");
+            room.Add(404, "2 DOUBLE BED + 4 CRIB");
+            room.Add(411, "2 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(412, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(421, "2 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(422, "2 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(431, "2 DOUBLE BED + 3 SINGLE BED + 1 CRIB");
+            room.Add(413, "2 DOUBLE BED + 3 CRIB");
+            room.Add(500, "1 TRIPLE BED + 1 DOUBLE BED");
+            room.Add(501, "1 TRIPLE BED + 1 DOUBLE BED + 1 CRIB");
+            room.Add(510, "1 TRIPLE BED + 1 DOUBLE BED + 1 SINGLE BED");
+            room.Add(520, "1 TRIPLE BED + 2 DOUBLE BED");
+            room.Add(502, "1 TRIPLE BED + 1 DOUBLE BED + 2 CRIB");
+            room.Add(503, "1 TRIPLE BED + 1 DOUBLE BED + 3 CRIB");
+            room.Add(530, "4 DOUBLE BED");
+            room.Add(521, "1 TRIPLE BED + 2 DOUBLE BED + 1 CRIB");
+            room.Add(512, "1 TRIPLE BED + 1 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(600, "2 TRIPLE BED i.e. 1 double bed + 1 sofa bed");
+            room.Add(601, "2 TRIPLE BED + 1 CRIB");
+            room.Add(610, "2 TRILPE BED + 1 SINGLE BED");
+            room.Add(620, "2 TRIPLE BED + 1 DOUBLE BED");
+            room.Add(602, "2 TRIPLE BED + 2 CRIB");
+            room.Add(621, "2 TRIPLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(612, "2 TRIPLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(700, "1 QUAD BED + 1 TRIPLE BED");
+            room.Add(710, "1 QUAD BED + 2 DOUBLE BED");
+            room.Add(701, "1 QUAD BED + 1 TRILPE BED + 1 CRIB");
+            room.Add(800, "2 QUAD BED");
+            //Console.WriteLine("NO MORE THAN 8  PEOPLE ARE ALLOWED TO STAY IN A ROOM. SORRY.");
+            foreach (KeyValuePair<int, string> j in room)
+            {
+                if (j.Key == total)
+                {
+                    Console.WriteLine("The allocated bed for you is : " + j.Value);
+                    Console.ReadLine();
+                }
+            }
+        }
+        public static void NorthAmerica()
+        {
+            Console.WriteLine("Your destination is North America!");
+            Console.WriteLine("Extra charges is applicable for CRIBs");
+            Console.ReadLine();
+            int total, a, b, c, sum;
+            Console.WriteLine("Enter the number of Adults : ");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Children : ");
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Infants : ");
+            c = int.Parse(Console.ReadLine());
+            total = a * 100 + b * 10 + c;
+            sum=a+b+c;
+            if(sum>8)
+            {
+              Console.WriteLine("No more than 8 people can be accomodated");
+              Console.ReadLine();
+            }
+            Dictionary<int, string> room = new Dictionary<int, string>();
+            room.Add(100, "1 SINGLE BED");
+            room.Add(101, "1 TWIN BED i.e. 1 double bed");
+            room.Add(102, "1 TWIN BED i.e. 1 double bed");
+            room.Add(110, "1 TWIN BED i.e. 1 double bed");
+            room.Add(111, "1 TWIN BED i.e. 1 double bed + 1 CRIB");
+            room.Add(112, "1 TWIN BED i.e. 1 double bed + 2 CRIB");
+            room.Add(120, "1 DOUBLE BED");
+            room.Add(121, "1 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(122, "2 DOUBLE BED + 2 CRIB");
+            room.Add(200, "1 DOUBLE BED");
+            room.Add(201, "1 DOUBLE BED + 1 CRIB");
+            room.Add(210, "1 TRIPLE BED i.e. double bed + single bed");
+            room.Add(220, "1 DOUBLE BED + 2 SINGLE BED");
+            room.Add(202, "1 DOUBLE BED + 2 CRIB");
+            room.Add(211, "1 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(212, "1 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(221, "2 DOUBLE BED + 1 CRIB");
+            room.Add(222, "2 DOUBLE BED + 2 CRIB");
+            room.Add(230, "2 DOUBLE BED + SINGLE BED");
+            room.Add(203, "1 DOUBLE + 1 CRIB + 1 DOUBLE + 2 CRIB");
+            room.Add(231, "2 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(213, "1 DOUBLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(232, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(223, "2 DOUBLE BED + 3 CRIB");
+            room.Add(300, "1 TRIPLE BED i.e. 2 double bed");
+            room.Add(301, "1 TRIPLE BED i.e. 2 double bed");
+            room.Add(320, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(310, "2 DOUBLE BED");
+            room.Add(302, "1 TRIPLE BED i.e. 2 double bed");
+            room.Add(303, "1 DOUBLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(330, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(321, "1 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(312, "1 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(322, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(331, "2 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(313, "2 DOUBLE BED + 3 CRIB");
+            room.Add(332, "2 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(333, "2 DOUBLE BED + 2 SINGLE BED + 3 CRIB");
+            room.Add(341, "3 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(314, "2 DOUBLE BED + 4 CRIB");
+            room.Add(400, "1 QUAD BED");
+            room.Add(410, "2 DOUBLE BED + 1 SINGLE BED");
+            room.Add(401, "1 QUAD BED");
+            room.Add(402, "1 QUAD BED");
+            room.Add(420, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(403, "1 TRIPLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(430, "3 DOUBLE BED + 1 SINGLE BED");
+            room.Add(440, "2 DOUBLE BED + 4 SINGLE BED");
+            room.Add(404, "2 DOUBLE BED + 4 CRIB");
+            room.Add(411, "2 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(412, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(421, "2 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(422, "2 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(431, "2 DOUBLE BED + 3 SINGLE BED + 1 CRIB");
+            room.Add(413, "2 DOUBLE BED + 3 CRIB");
+            room.Add(500, "1 TRIPLE BED + 1 DOUBLE BED");
+            room.Add(501, "1 TRIPLE BED + 1 DOUBLE BED + 1 CRIB");
+            room.Add(510, "1 TRIPLE BED + 1 DOUBLE BED + 1 SINGLE BED");
+            room.Add(520, "1 TRIPLE BED + 2 DOUBLE BED");
+            room.Add(502, "1 TRIPLE BED + 1 DOUBLE BED + 2 CRIB");
+            room.Add(503, "1 TRIPLE BED + 1 DOUBLE BED + 3 CRIB");
+            room.Add(530, "4 DOUBLE BED");
+            room.Add(521, "1 TRIPLE BED + 2 DOUBLE BED + 1 CRIB");
+            room.Add(512, "1 TRIPLE BED + 1 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(600, "2 TRIPLE BED i.e. 2 double bed");
+            room.Add(601, "2 TRIPLE BED + 1 CRIB");
+            room.Add(610, "2 TRILPE BED + 1 SINGLE BED");
+            room.Add(620, "2 TRIPLE BED + 1 DOUBLE BED");
+            room.Add(602, "2 TRIPLE BED + 2 CRIB");
+            room.Add(621, "2 TRIPLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(612, "2 TRIPLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(700, "1 QUAD BED + 1 TRIPLE BED");
+            room.Add(710, "1 QUAD BED + 2 DOUBLE BED");
+            room.Add(701, "1 QUAD BED + 1 TRILPE BED + 1 CRIB");
+            room.Add(800, "2 QUAD BED");
+            //Console.WriteLine("NO MORE THAN 8  PEOPLE ARE ALLOWED TO STAY IN A ROOM. SORRY.");
+            foreach (KeyValuePair<int, string> j in room)
+            {
+                if (j.Key == total)
+                {
+                    Console.WriteLine("The allocated bed for you is : " + j.Value);
+                    Console.ReadLine();
+                }
+            }
+        }
+        public static void Australia()
+        {
+            Console.WriteLine("Your destination is Australia!");
+            Console.WriteLine("Extra charges is applicable for CRIBs");
+            Console.ReadLine();
+            int a, b, c, total, sum;
+            Console.WriteLine("Enter the number of Adults : ");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Children : ");
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Infants : ");
+            c = int.Parse(Console.ReadLine());
+            total = a * 100 + b * 10 + c;
+            sum=a+b+c;
+            if(sum>8)
+            {
+              Console.WriteLine("No more than 8 people can be accomodated");
+              Console.ReadLine();
+            }
+            Dictionary<int, string> room = new Dictionary<int, string>();
+            room.Add(100, "1 SINGLE BED");
+            room.Add(101, "1 TWIN BED i.e. two single beds");
+            room.Add(102, "1 TWIN BED i.e. two single beds");
+            room.Add(110, "1 TWIN BED i.e. two single beds");
+            room.Add(111, "1 TWIN BED i.e. two single beds + 1 CRIB");
+            room.Add(112, "1 TWIN BED i.e. two single beds + 2 CRIB");
+            room.Add(120, "1 DOUBLE BED");
+            room.Add(121, "1 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(122, "2 DOUBLE BED + 2 CRIB");
+            room.Add(200, "1 DOUBLE BED");
+            room.Add(201, "1 DOUBLE BED + 1 CRIB");
+            room.Add(210, "1 TRIPLE BED i.e. double bed + single bed");
+            room.Add(220, "1 DOUBLE BED + 2 SINGLE BED");
+            room.Add(202, "1 DOUBLE BED + 2 CRIB");
+            room.Add(211, "1 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(212, "1 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(221, "2 DOUBLE BED + 1 CRIB");
+            room.Add(222, "2 DOUBLE BED + 2 CRIB");
+            room.Add(230, "2 DOUBLE BED + SINGLE BED");
+            room.Add(203, "1 DOUBLE + 1 CRIB + 1 DOUBLE + 2 CRIB");
+            room.Add(231, "2 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(213, "1 DOUBLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(232, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(223, "2 DOUBLE BED + 3 CRIB");
+            room.Add(300, "1 TRIPLE BED");
+            room.Add(301, "1 TRIPLE BED ");
+            room.Add(320, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(310, "2 DOUBLE BED");
+            room.Add(302, "1 TRIPLE BED");
+            room.Add(303, "1 DOUBLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(330, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(321, "1 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(312, "1 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(322, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(331, "2 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(313, "2 DOUBLE BED + 3 CRIB");
+            room.Add(332, "2 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(333, "2 DOUBLE BED + 2 SINGLE BED + 3 CRIB");
+            room.Add(341, "3 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(314, "2 DOUBLE BED + 4 CRIB");
+            room.Add(400, "1 QUAD BED");
+            room.Add(410, "2 DOUBLE BED + 1 SINGLE BED");
+            room.Add(401, "1 QUAD BED");
+            room.Add(402, "1 QUAD BED");
+            room.Add(420, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(403, "1 TRIPLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(430, "3 DOUBLE BED + 1 SINGLE BED");
+            room.Add(440, "2 DOUBLE BED + 4 SINGLE BED");
+            room.Add(404, "2 DOUBLE BED + 4 CRIB");
+            room.Add(411, "2 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(412, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(421, "2 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(422, "2 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(431, "2 DOUBLE BED + 3 SINGLE BED + 1 CRIB");
+            room.Add(413, "2 DOUBLE BED + 3 CRIB");
+            room.Add(500, "1 TRIPLE BED + 1 DOUBLE BED");
+            room.Add(501, "1 TRIPLE BED + 1 DOUBLE BED + 1 CRIB");
+            room.Add(510, "1 TRIPLE BED + 1 DOUBLE BED + 1 SINGLE BED");
+            room.Add(520, "1 TRIPLE BED + 2 DOUBLE BED");
+            room.Add(502, "1 TRIPLE BED + 1 DOUBLE BED + 2 CRIB");
+            room.Add(503, "1 TRIPLE BED + 1 DOUBLE BED + 3 CRIB");
+            room.Add(530, "4 DOUBLE BED");
+            room.Add(521, "1 TRIPLE BED + 2 DOUBLE BED + 1 CRIB");
+            room.Add(512, "1 TRIPLE BED + 1 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(600, "2 TRIPLE BED");
+            room.Add(601, "2 TRIPLE BED + 1 CRIB");
+            room.Add(610, "2 TRILPE BED + 1 SINGLE BED");
+            room.Add(620, "2 TRIPLE BED + 1 DOUBLE BED");
+            room.Add(602, "2 TRIPLE BED + 2 CRIB");
+            room.Add(621, "2 TRIPLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(612, "2 TRIPLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(700, "1 QUAD BED + 1 TRIPLE BED");
+            room.Add(710, "1 QUAD BED + 2 DOUBLE BED");
+            room.Add(701, "1 QUAD BED + 1 TRILPE BED + 1 CRIB");
+            room.Add(800, "2 QUAD BED");
+            //Console.WriteLine("NO MORE THAN 8  PEOPLE ARE ALLOWED TO STAY IN A ROOM. SORRY.");
+
+            foreach (KeyValuePair<int, string> j in room)
+            {
+                if (j.Key == total)
+                {
+                    Console.WriteLine("The allocated bed for you is : " + j.Value);
+                    Console.ReadLine();
+                }
+            }
+        }
+        public static void Asia()
+        {
+            Console.WriteLine("Your destination is Asia!");
+            Console.WriteLine("Extra charges is applicable for CRIBs");
+            Console.ReadLine();
+            int a, b, c, total, sum;
+            Console.WriteLine("Enter the number of Adults : ");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Children : ");
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Infants : ");
+            c = int.Parse(Console.ReadLine());
+            total = a * 100 + b * 10 + c;
+            sum=a+b+c;
+            if(sum>8)
+            {
+              Console.WriteLine("No more than 8 people can be accomodated");
+              Console.ReadLine();
+            }
+            Dictionary<int, string> room = new Dictionary<int, string>();
+            room.Add(100, "1 SINGLE BED");
+            room.Add(101, "1 TWIN BED i.e. two single beds");
+            room.Add(102, "1 TWIN BED i.e. two single beds");
+            room.Add(110, "1 TWIN BED i.e. two single beds");
+            room.Add(111, "1 TWIN BED i.e. two single beds + 1 CRIB");
+            room.Add(112, "1 TWIN BED i.e. two single beds + 2 CRIB");
+            room.Add(120, "1 DOUBLE BED");
+            room.Add(121, "1 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(122, "2 DOUBLE BED + 2 CRIB");
+            room.Add(200, "1 DOUBLE BED");
+            room.Add(201, "1 DOUBLE BED + 1 CRIB");
+            room.Add(210, "1 TRIPLE BED i.e. double bed + single bed");
+            room.Add(220, "1 DOUBLE BED + 2 SINGLE BED");
+            room.Add(202, "1 DOUBLE BED + 2 CRIB");
+            room.Add(211, "1 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(212, "1 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(221, "2 DOUBLE BED + 1 CRIB");
+            room.Add(222, "2 DOUBLE BED + 2 CRIB");
+            room.Add(230, "2 DOUBLE BED + SINGLE BED");
+            room.Add(203, "1 DOUBLE + 1 CRIB + 1 DOUBLE + 2 CRIB");
+            room.Add(231, "2 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(213, "1 DOUBLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(232, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(223, "2 DOUBLE BED + 3 CRIB");
+            room.Add(300, "1 TRIPLE BED");
+            room.Add(301, "1 TRIPLE BED ");
+            room.Add(320, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(310, "2 DOUBLE BED");
+            room.Add(302, "1 TRIPLE BED");
+            room.Add(303, "1 DOUBLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(330, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(321, "1 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(312, "1 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(322, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(331, "2 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(313, "2 DOUBLE BED + 3 CRIB");
+            room.Add(332, "2 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(333, "2 DOUBLE BED + 2 SINGLE BED + 3 CRIB");
+            room.Add(341, "3 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(314, "2 DOUBLE BED + 4 CRIB");
+            room.Add(400, "1 QUAD BED");
+            room.Add(410, "2 DOUBLE BED + 1 SINGLE BED");
+            room.Add(401, "1 QUAD BED");
+            room.Add(402, "1 QUAD BED");
+            room.Add(420, "2 DOUBLE BED + 2 SINGLE BED");
+            room.Add(403, "1 TRIPLE BED + 1 SINGLE BED + 3 CRIB");
+            room.Add(430, "3 DOUBLE BED + 1 SINGLE BED");
+            room.Add(440, "2 DOUBLE BED + 4 SINGLE BED");
+            room.Add(404, "2 DOUBLE BED + 4 CRIB");
+            room.Add(411, "2 DOUBLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(412, "2 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(421, "2 DOUBLE BED + 2 SINGLE BED + 1 CRIB");
+            room.Add(422, "2 DOUBLE BED + 2 SINGLE BED + 2 CRIB");
+            room.Add(431, "2 DOUBLE BED + 3 SINGLE BED + 1 CRIB");
+            room.Add(413, "2 DOUBLE BED + 3 CRIB");
+            room.Add(500, "1 TRIPLE BED + 1 DOUBLE BED");
+            room.Add(501, "1 TRIPLE BED + 1 DOUBLE BED + 1 CRIB");
+            room.Add(510, "1 TRIPLE BED + 1 DOUBLE BED + 1 SINGLE BED");
+            room.Add(520, "1 TRIPLE BED + 2 DOUBLE BED");
+            room.Add(502, "1 TRIPLE BED + 1 DOUBLE BED + 2 CRIB");
+            room.Add(503, "1 TRIPLE BED + 1 DOUBLE BED + 3 CRIB");
+            room.Add(530, "4 DOUBLE BED");
+            room.Add(521, "1 TRIPLE BED + 2 DOUBLE BED + 1 CRIB");
+            room.Add(512, "1 TRIPLE BED + 1 DOUBLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(600, "2 TRIPLE BED");
+            room.Add(601, "2 TRIPLE BED + 1 CRIB");
+            room.Add(610, "2 TRILPE BED + 1 SINGLE BED");
+            room.Add(620, "2 TRIPLE BED + 1 DOUBLE BED");
+            room.Add(602, "2 TRIPLE BED + 2 CRIB");
+            room.Add(621, "2 TRIPLE BED + 1 SINGLE BED + 1 CRIB");
+            room.Add(612, "2 TRIPLE BED + 1 SINGLE BED + 2 CRIB");
+            room.Add(700, "1 QUAD BED + 1 TRIPLE BED");
+            room.Add(710, "1 QUAD BED + 2 DOUBLE BED");
+            room.Add(701, "1 QUAD BED + 1 TRILPE BED + 1 CRIB");
+            room.Add(800, "2 QUAD BED");
+            //Console.WriteLine("NO MORE THAN 8  PEOPLE ARE ALLOWED TO STAY IN A ROOM. SORRY.");
+            foreach (KeyValuePair<int, string> j in room)
+            {
+                if (j.Key == total)
+                {
+                    Console.WriteLine("The allocated bed for you is : " + j.Value);
+                    Console.ReadLine();
+                }
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            int total;
+            string destination;
+            Console.WriteLine("Welcome to GTA Hotels : ");
+            Console.WriteLine("**********************");
+            Console.ReadLine();
+            Console.WriteLine("Please enter your Destination");
+            destination = Console.ReadLine();
+            /*Console.WriteLine("Enter the number of Adults : ");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Children : ");
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of Infants : ");
+            c = int.Parse(Console.ReadLine());
+            total = a * 100 + b * 10 + c;
+            if(total>800)
+            {
+                Console.WriteLine("No more than 8 people can be accomodated");
+                Console.ReadLine();
+                
+            }
+             switch(destination)
+            {
+                case "one":
+                    German(total);
+                    break;
+                case "two":
+                    Scandinavia(total);
+                    break;
+                case "three":
+                    North_America(total);
+                    break;
+                case "four":
+                    Australia(total);
+                    break;
+                case "five":
+                    Asia(total);
+                    break;
+                default:
+                    Console.WriteLine("Our hotel is not present in the destination that is entered. Sorry. ");
+                    Console.ReadLine();
+                    break;*/
+            if (string.Compare(destination, "Germany") == 0)
+            {
+                German();
+            }
+            else if (string.Compare(destination, "Scandinavia") == 0)
+            {
+                Scandinavia();
+            }
+            else if (string.Compare(destination, "North America") == 0)
+            {
+                NorthAmerica();
+            }
+            else if (string.Compare(destination, "Australia") == 0)
+            {
+                Australia();
+            }
+            else if (string.Compare(destination, "Asia") == 0)
+            {
+                Asia();
+            }
+            else
+            {
+                Console.WriteLine("Our hotel is not present in the destination that is entered. Sorry. ");
+                Console.ReadLine();
+            }
+
+
+        }
+    }
+}
