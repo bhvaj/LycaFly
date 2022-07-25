@@ -1,0 +1,78 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+      padding-top:0px;
+}
+form {border: 3px solid #f1f1f1;}
+input[type=text], input[type=text] {
+
+  width: 20%;
+  padding: 4px 2px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: green;
+  color: white;
+  padding: 4px 2px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 5%;
+}
+button:hover {
+  opacity: 1;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+.container {
+  padding: 0px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}   
+  .cancelbtn {
+     width: 100%;
+  }
+
+</style>
+<body>
+    <h1 style="background-color: darkblue; background-size: 10px; color: white; font-size: 20px; margin-top: -10px; margin-bottom: 10px;">
+        Manage Airlines
+    </h1>
+    <div class="container">
+        <label for="uname" ><b>Airline Name</b></label>
+        <input type="text" name="aname" required>
+
+        <label for="psw"><b>Airline Code</b></label>
+        <input type="text" name="acode" required>
+
+        <label for="Status">Status</label>
+
+        <select name="Status" id="Status">
+            <option value="Active">Active</option>
+            <option value="InActive">InActive</option>
+        </select>
+    </div>
+</body>
+<body>
+    <button type="submit">New</button>
+    <button type="submit">Search</button>
+    <button type="submit">Reset</button>
+</body>
